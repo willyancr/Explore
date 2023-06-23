@@ -1,10 +1,10 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
 .page{
-    
     width: 1000px;
     margin: 65px auto 0px;
 }
@@ -56,10 +56,19 @@ button{
     border: none;
     border-radius: 5px;
     font-size: 1.5em;
-    padding: 10px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+button:hover{
+    background-color: #276436;
+    cursor: pointer;
 }
 footer{
-    background-color: #36b0bb1a;
+    /*background-color: #36b0bb1a;*/
     padding: 20px;
     text-align: center;
 }
