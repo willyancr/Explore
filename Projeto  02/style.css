@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+.page{
+    border: 1px solid black;
+    width: 1000px;
+    margin: 65px auto;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 55px;
+}
+header h3{
+    color: #36B0BB;
+    font-weight: 800;
+}
+nav ul{
+    list-style-type: none;
+    display: flex;
+    gap: 48px;
+    margin: 0;
+    padding: 0;
+}
+li{
+    color: #6b6b6b;
+    font-weight: 700;
+}
+li:hover{
+    color: black;
+    cursor: pointer;
+}
