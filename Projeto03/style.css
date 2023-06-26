@@ -1,0 +1,40 @@
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #e5e5e5;
+}
+body::before{
+    content: '';
+    width: 100%;
+    height: 368px;
+    position: absolute; /*Ele fica sobreposto*/
+    top: 0; /*Fica colado no topo*/
+    left: 0; /*Fica colado no lado esquerdo*/
+    z-index: -1; /* Faz o objeto ficar atrás*/
+    background: black;
+}
+.page{
+    width: 736px;
+    margin: auto;
+}
+header{
+    width: 319px;
+}
+header h1{
+    font-family: 'Archivo', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    margin-top: 74px;
+    color: white;
+}
+header p{
+    color: #42d3ff;
+    font-size: 16px;
+    line-height: 26px;
+}
+form{
+    background: #fafafc;
+    margin-top: 38px;
+    border-radius: 8px 8px 0px 0px;
+}
