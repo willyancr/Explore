@@ -18,31 +18,82 @@
         </header>
 
             <form action="" method="get">
-                <h2>Informações do Evento</h2>
+                
                 <fieldset>
-                    <div>
-                        <label for="tituloevento">Título do evento</label><br>
+                    <legend>Informações do Evento</legend>
+
+                    <div class="campo">
+                        <label for="tituloevento">Título do evento <span>(mínimo 8 caracteres)</span></label>
                         <input type="text" name="tituloevento" id="tituloevento" required>
                     </div>
-                    <div>
-                        <label for="linkevento">Link do evento</label><br>
+
+                    <div class="campo">
+                        <label for="linkevento">Link do evento <span>(começa com https://)</span></label>
                         <input type="url" name="linkevento" id="linkevento" required>
                     </div>
-                    <div>
-                        <label for="contato">Whatsapp para contato</label><br>
-                        <input type="tel" name="contato" id="contato" required>
+
+                    <div class="campo">
+                        <label for="contato">Whatsapp para contato <span>(somente números)</span></label>
+                        <input type="number" name="contato" id="contato" required>
                     </div>
-                    <div>
-                        <label for="informações">Informações extras</label><br>
-                        <textarea name="informações" id="informações" cols="30" rows="10"></textarea>
+
+                    <div class="campo">
+                        <label for="informações">Informações extras</label>
+                        <textarea name="informações" id="informações" ></textarea>
                     </div>
-                    <div>
-                        <label for="categoria">Categoria</label><br>
+
+                    <div class="campo">
+                        <label for="categoria">Categoria</label>
                         <select name="categoria" id="categoria">
                             <option value="">Tipo do Evento</option>
                             <option value="">Formatura</option>
+                            <option value="">Casamento</option>
+                            <option value="">Aniversario</option>
                         </select>
                     </div>
+
+                </fieldset>
+
+                <fieldset>
+
+                    <legend>Privacidade</legend>
+
+                    <div class="campo">
+                        <label for="email">E-mail do administrador<span>(digite um email válido)</span></label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="senha">Senha de acesso para os participantes<span>(mínimo 8 caracteres)</span></label>
+                        <input type="password" id="senha" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="checkbox">Evento privado</label>
+                        <input type="checkbox" id="checkbox" >
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+
+                    <legend>Data e hora</legend>
+
+                    <div class="campo">
+                        <label for="data">Data</label>
+                        <input type="date" id="data" >
+                    </div>
+
+                    <div class="campo">
+                        <label for="hora1">Das</label>
+                        <input type="time" id="hora1" >
+                    </div>
+
+                    <div class="campo">
+                        <label for="hora2">Até</label>
+                        <input type="time" id="hora2" >
+                    </div>
+
                 </fieldset>
             </form>
     </div>

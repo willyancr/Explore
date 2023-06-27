@@ -1,6 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, input, select, textarea, button{
 
-body{
     font-family: 'Poppins', sans-serif;
+}
+body{
     background: #e5e5e5;
 }
 body::before{
@@ -26,6 +33,7 @@ header h1{
     font-size: 36px;
     line-height: 42px;
     margin-top: 74px;
+    margin-bottom: 24px;
     color: white;
 }
 header p{
@@ -37,4 +45,54 @@ form{
     background: #fafafc;
     margin-top: 38px;
     border-radius: 8px 8px 0px 0px;
+    padding: 64px;
+}
+fieldset{
+    border: none;
+   
+}
+fieldset legend{
+    font-family: 'Archivo';
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 34px;
+    border-bottom: 1px solid #E6E6F0;
+    width: 100%;
+    padding-bottom: 16px;
+}
+.campo{
+    display: flex;
+    flex-direction: column;
+}
+.campo label{
+    margin-bottom: 8px;
+    margin-top: 24px;
+}
+.campo label span{
+    margin-left: 12px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #717171;
+}
+.campo input, textarea, select {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #b2b2bb;
+    height: 40px;
+    padding: 0px 15px;
+    color: #717171;
+}
+.campo textarea{
+    padding: 15px 15px;
+    height: 150px;
+}
+.campo select{
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' id='Outline' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath d='M18.71,8.21a1,1,0,0,0-1.42,0l-4.58,4.58a1,1,0,0,1-1.42,0L6.71,8.21a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41l4.59,4.59a3,3,0,0,0,4.24,0l4.59-4.59A1,1,0,0,0,18.71,8.21Z'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: right 24px top 50%;
+    margin-bottom: 24px;
+}
+.data{
+    display: flex;
 }
