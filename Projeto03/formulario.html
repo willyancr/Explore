@@ -24,12 +24,12 @@
 
                     <div class="campo">
                         <label for="tituloevento">Título do evento <span>(mínimo 8 caracteres)</span></label>
-                        <input type="text" name="tituloevento" id="tituloevento" >
+                        <input type="text" name="tituloevento" id="tituloevento" minlength="8" required>
                     </div>
 
                     <div class="campo">
                         <label for="linkevento">Link do evento <span>(começa com https://)</span></label>
-                        <input type="url" name="linkevento" id="linkevento" >
+                        <input type="url" name="linkevento" id="linkevento" required>
                     </div>
 
                     <div class="campo">
@@ -65,7 +65,7 @@
 
                     <div class="campo">
                         <label for="senha">Senha de acesso para os participantes<span>(mínimo 8 caracteres)</span></label>
-                        <input type="password" id="senha" >
+                        <input type="password" id="senha" minlength="8">
                     </div>
 
                     <div class="campocheckbox">
