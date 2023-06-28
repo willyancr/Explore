@@ -17,24 +17,24 @@
             <p>O primeiro passo, é preencher esse formulário de inscrição</p>
         </header>
 
-            <form action="" method="get">
+            <form id="my-form" method="get">
                 
                 <fieldset>
                     <legend>Informações do Evento</legend>
 
                     <div class="campo">
                         <label for="tituloevento">Título do evento <span>(mínimo 8 caracteres)</span></label>
-                        <input type="text" name="tituloevento" id="tituloevento" required>
+                        <input type="text" name="tituloevento" id="tituloevento" >
                     </div>
 
                     <div class="campo">
                         <label for="linkevento">Link do evento <span>(começa com https://)</span></label>
-                        <input type="url" name="linkevento" id="linkevento" required>
+                        <input type="url" name="linkevento" id="linkevento" >
                     </div>
 
                     <div class="campo">
                         <label for="contato">Whatsapp para contato <span>(somente números)</span></label>
-                        <input type="number" name="contato" id="contato" required>
+                        <input type="number" name="contato" id="contato" >
                     </div>
 
                     <div class="campo">
@@ -60,42 +60,50 @@
 
                     <div class="campo">
                         <label for="email">E-mail do administrador<span>(digite um email válido)</span></label>
-                        <input type="email" id="email" required>
+                        <input type="email" id="email" >
                     </div>
 
                     <div class="campo">
                         <label for="senha">Senha de acesso para os participantes<span>(mínimo 8 caracteres)</span></label>
-                        <input type="password" id="senha" required>
+                        <input type="password" id="senha" >
                     </div>
 
-                    <div class="campo">
-                        <label for="checkbox">Evento privado</label>
+                    <div class="campocheckbox">
                         <input type="checkbox" id="checkbox" >
+                        <label for="checkbox">Evento privado</label>
                     </div>
 
                 </fieldset>
 
-                <fieldset>
+                <fieldset >
 
                     <legend>Data e hora</legend>
 
-                    <div class="campo">
-                        <label for="data">Data</label>
-                        <input type="date" id="data" >
-                    </div>
+                    <div class="diaehora">
 
-                    <div class="campo">
-                        <label for="hora1">Das</label>
-                        <input type="time" id="hora1" >
-                    </div>
+                        <div class="campo">
+                            <label for="data">Data</label>
+                            <input type="date" id="data" >
+                        </div>
 
-                    <div class="campo">
-                        <label for="hora2">Até</label>
-                        <input type="time" id="hora2" >
+                        <div class="campo">
+                            <label for="hora1">Das</label>
+                            <input type="time" id="hora1" >
+                        </div>
+
+                        <div class="campo">
+                            <label for="hora2">Até</label>
+                            <input type="time" id="hora2" >
+                        </div>
+
                     </div>
 
                 </fieldset>
+
             </form>
+            <div class="botao">
+                <input form="my-form" type="submit" value="Salvar evento">
+            </div>
     </div>
 </body>
 </html>
