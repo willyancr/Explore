@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'medium';
+    src: url(fonts/GothamMedium.ttf);
+}
+@font-face {
+    font-family: 'book';
+    src: url(fonts/GothamBook.ttf);
+}
+@font-face {
+    font-family: 'xlight';
+    src: url(fonts/Gotham-XLight.otf);
+}
+@font-face {
+    font-family: 'black';
+    src: url(fonts/Gotham-Black.otf);
+}
+*{
+    margin: 0;
+    padding: 0;   
+}
+.page{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background: rgb(4,239,142);
+    background: linear-gradient(153deg, rgba(4,239,142,1) 39%, rgba(25,143,96,1) 79%);
+}
+.card-left{
+    height: 70%;
+    width: 350px;
+    border-radius: 10px;
+
+    background: rgb(96,233,154);
+    background: linear-gradient(149deg, rgba(96,233,154,1) 0%, rgba(69,213,125,1) 100%);
+}
+.text-left{
+    font-family: 'medium';
+    padding: 40px;
+}
