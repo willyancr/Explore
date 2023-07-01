@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+:root{
+    font-size: 62.5%;
+}
+.page{
+    font-family: 'Epilogue';
+    background: #28293E;
+    font-size: 1.6rem;
+}
+.container{
+    max-width: 32.9rem;
+    margin: 0 auto;
+}
+header{
+    text-align: center;
+}
+header p{
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #BBB3E5;
+    padding: 10.6rem 0 1.7rem;
+}
+header h1{
+    font-size: 4rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 8rem;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 3.2rem;
+}
+.card{
+    position: relative;
+}
+.card img{
+    height: 41.6rem;
+    object-fit: cover;
+}
+.card h2{
+    position: absolute;
+    left: 2.8rem;
+    bottom: 5.2rem;
+    color: #FFFFFF;
+}
+.card h2 span{
+    border-radius: 2rem;
+    background: #FFFFFF;
+    padding: 0 1.6rem;
+    color: #28293E;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 3.8rem;
+    margin-bottom: 2.1rem;
+}
