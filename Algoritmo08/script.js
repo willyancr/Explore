@@ -30,7 +30,7 @@ for(let patient of patients){
     patientsDados.push(patient.height)
 }
 
-alert(`Nome: ${patients[0].name}
+console.log(`Nome: ${patients[0].name}
 Idade: ${patients[0].age}
 Peso: ${patients[0].width}
 Altura: ${patients[0].height}
