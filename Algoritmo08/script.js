@@ -4,38 +4,37 @@ const patients = [
     {
         name: 'João',
         age: 11,
-        width: 34,
+        weight: 34,
         height: 141,
     },
     {
         name: 'Marina',
         age: 8,
-        width: 40,
+        weight: 40,
         height: 145,
     },
     {
         name: 'Sophia',
         age: 14,
-        width: 55,
+        weight: 55,
         height: 160,
     }
 
 ]
-let patientsDados = []
 
-for(let patient of patients){
-    patientsDados.push(patient.name)
-    patientsDados.push(patient.age)
-    patientsDados.push(patient.width)
-    patientsDados.push(patient.height)
+
+function calcIMC(peso, altura){ //função calcular o IMC
+
+    return (peso / ((altura/100) ** 2)).toFixed(2)
+    
 }
 
-console.log(`Nome: ${patients[0].name}
-Idade: ${patients[0].age}
-Peso: ${patients[0].width}
-Altura: ${patients[0].height}
-Nome: ${patients[1].name}
-Idade: ${patients[1].age}
-Peso: ${patients[1].width}
-Altura: ${patients[1].height}
-`)
+function printIMCpatients(patient){ // função para imprimir os dados dos paciente
+    return `Paciente ${patient.name} possui o IMC de: ${calcIMC(patient.weight, patient.height)}`
+}
+
+for(let patient of patients){ //uma estrutura de repetição para pegar todos os dados do vetor
+
+    alert (printIMCpatients(patient))
+}
+
