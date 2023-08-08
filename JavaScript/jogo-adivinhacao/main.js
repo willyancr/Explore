@@ -18,7 +18,8 @@ function handleClick(event){ //função verifica se o num digitado é igual ao r
     const inputNumber = document.querySelector('#inputNumber')
     
     if(Number(inputNumber.value) == numRandon){
-        toggleScreen()
+        screen1.classList.add('hide')
+        screen2.classList.remove('hide')
         screen2.querySelector('h2').innerText = `Acertou em ${xAttempts} tentativas` //innertext add texto em um elemento
     }
     
@@ -27,15 +28,10 @@ function handleClick(event){ //função verifica se o num digitado é igual ao r
 }
 
 function handleResetClick(){ // ao clicar no botão jogar novamente, volta pra primeira pagina
-    toggleScreen()
+    screen1.classList.remove('hide')
+    screen2.classList.add('hide')
     xAttempts = 1
 }
-
-function toggleScreen(){ //função para alternar as paginas ao clicar no botão
-    screen1.classList.toggle('hide')
-    screen2.classList.toggle('hide')
-}
-
 function handleBtnEnter(e){ // função ao clicar no enter, volta pra primeira pagina
     if(e.key === 'Enter'){
         handleResetClick()
