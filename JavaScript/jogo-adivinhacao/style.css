@@ -8,7 +8,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body{
-    background: linear-gradient(287.56deg, #C2E9FB 0%, #A1C4FD 100%);
+    background: linear-gradient(287.56deg, #10222b 0%, #A1C4FD 100%);
     font-size: 1.6rem;
     display: grid;
     place-items: center; /*Alinha a caixa ao centro com grid*/

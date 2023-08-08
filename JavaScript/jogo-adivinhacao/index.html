@@ -12,17 +12,17 @@
 
         <div class="screen1">
             <h1>Jogo da Advinhação</h1>
-            <p>Advinhe o número entre <span>0</span> e <span>10</span></p>
+            <p>Advinhe o número entre <span>0</span> e <span>5</span></p>
             
             <form action="">
                 <input id="inputNumber" type="text" autocomplete="off" >
-                <button onclick="handleClick(event)">Tentar</button>
+                <button id="btnTry">Tentar</button>
             </form>
         </div>
 
         <div class="screen2 hide">
             <h2>Acertou em 3 tentativas!</h2>
-            <button>Jogar novamente</button>
+            <button id="btnPlayAgain">Jogar novamente</button>
 
         </div>
 
