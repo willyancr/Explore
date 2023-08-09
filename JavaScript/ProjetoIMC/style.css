@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-size: 62.5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    font-size: 1.6rem;
+    background: linear-gradient(287.56deg, #10222b 0%, #A1C4FD 100%);
+    
+}
+.container{
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+.card{
+    background-color: aliceblue;
+    width: 40rem;
+    padding: 4.8rem 6.4rem 6.4rem;
+    border-radius: .6rem;
+    box-shadow: 0 .2rem .4rem rgba(0, 0, 0, 0.1);
+    margin-top: -12rem;
+}
+h1{
+    color: rgb(66, 66, 66);
+    margin-bottom: 2rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;    
+}
+label{
+    margin-bottom: 1rem;
+}
+form input{
+    width: 100%;
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: .5rem;
+    border: none;
+    background-color:  rgb(174, 189, 206);
+    margin-bottom: 1rem;
+}
+form input:focus{
+    outline: 2px solid rgb(114, 66, 224);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /*remover a seta */
+  margin: 0;
+}
+button{
+    border: none;
+    background: rgb(114, 66, 224);
+    color: aliceblue;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: .2rem;
+    width: 100%;
+    padding: 1.6rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 2.5rem;
+}
+button:hover{
+    background: rgb(68, 39, 134);
+}
