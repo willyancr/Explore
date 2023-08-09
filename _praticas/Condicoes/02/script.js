@@ -1,21 +1,24 @@
+//variaveis
+const speedAllowed = document.querySelector('#speedAllowed')
+const speedConductor = document.querySelector('#speedConductor')
+const btn = document.querySelector('#btn')
+const res = document.querySelector('#res')
 
-alert('### VERIFICA VELOCIDADE ###')
-const speedAllowed = Number(prompt('Velocidade permitida:'))
-const speedConductor = Number(prompt('Velocidade do condutor:'))
+//evento
+btn.addEventListener('click', calcTraffic)
 
-function calcTraffic(speedAllowed, speedConductor){
 
-    const lightFine = speedAllowed * 1.20
-    const seriusFine = speedAllowed * 1.20
+function calcTraffic(event){
+    event.preventDefault()
 
-    if(speedConductor <= speedAllowed){
-        return 'Situação: Sem Multa'
-    }else if(speedConductor <= lightFine){
-        return 'Situação: Multa Leve'
+    const lightFine = Number(speedAllowed.value) * 1.20
+    // const seriusFine = Number(speedAllowed.value) * 1.20
+
+    if(Number(speedConductor.value) <= Number(speedAllowed.value)){
+        res.innerText = 'Situação: Sem Multa'
+    }else if(Number(speedConductor.value) <= lightFine){
+        res.innerText = 'Situação: Multa Leve'
     }else{
-        return 'Situação: Multa grave'
+        res.innerText = 'Situação: Multa grave'
     }
 }
-
-const resultado = calcTraffic(speedAllowed,speedConductor)
-alert(resultado)
