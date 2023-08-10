@@ -10,18 +10,38 @@
 </head>
 <body>
     <div class="container">
+        <div class="img">
+            <img src="image/personal-trainer.svg" alt="">
+        </div>
         <main class="card">
-            <h1 class="title">Cálculo de IMC</h1>
+            <h1 class="title">Calculadora - IMC</h1>
 
             <form action="">
-                <label for="inputWeight">Peso (kg)</label>
-                <input type="number" name="inputWeight" id="inputWeight" autocomplete="off" placeholder="70.1">
-                <label for="inputHeight">Altura (cm)</label>
-                <input type="number" name="inputHeight" id="inputHeight" autocomplete="off" placeholder="183">
-                <button id="btnCalc">Calcular IMC <i class="fa-solid fa-arrow-right" style="color: #fcfcfc;"></i></button>
+                <label for="inputWeight"><i class="fa-solid fa-weight-hanging"></i> Peso (kg)</label>
+                <input type="text" name="inputWeight" id="inputWeight" autocomplete="off" placeholder="70.1">
+                <label for="inputHeight"><i class="fa-solid fa-ruler"></i> Altura (cm)</label>
+                <input type="text" name="inputHeight" id="inputHeight" autocomplete="off" placeholder="183">
+                <button id="btnCalc">Calcular IMC <i class="fa-solid fa-arrow-right fa-lg"></i></button>
             </form>
         </main>
     </div>
     
+    <div class="popUp-container ">
+
+        <div class="popUp card">
+            <h2>
+                <button class="btnClose"><i class="fa-solid fa-x fa-lg"></i></button>
+
+                Seu IMC é de 30
+
+            </h2>
+
+        </div> 
+
+    </div>
+
+    <div class="msgAlert ">           
+            <i class="fa-solid fa-triangle-exclamation"></i> Digite somente números
+    </div>
 </body>
 </html>
