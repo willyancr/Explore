@@ -64,7 +64,7 @@ form input{
     margin-bottom: 1rem;
 }
 form input:focus{
-    outline: 2px solid rgb(114, 66, 224);
+    outline: 1px solid #90CAF9;
 }
 
 form button{
@@ -101,10 +101,6 @@ form button i{
     place-content: center;
     opacity: 0;
     visibility: hidden;
-}
-.popUp h2{
-    color: rgb(66, 66, 66);
-    
 }
 .popUp{
     position: relative;
