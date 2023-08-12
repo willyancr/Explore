@@ -33,12 +33,6 @@ form.onsubmit = event => {
     inputWeight.value = ''
     inputHeight.value = ''
 }
-// function displayResultMessage(result){
-//     const message = `Seu IMC é de ( ${result} )`
-
-//     popup.popUpMessage.innerText = message
-//     popup.open()
-// }
 
 
 

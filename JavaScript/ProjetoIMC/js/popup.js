@@ -12,10 +12,6 @@ export const popup = {
         popup.popUpContainer.classList.remove('open')
     }
 }
-//Função botão fechar no popup
-popup.btnClose.onclick = () => {
-    popup.close()
-}
 //Função fechar popup tecla ESC
 document.addEventListener('keydown', handleEsc)
 function handleEsc(e){
@@ -23,6 +19,7 @@ function handleEsc(e){
         popup.close()
     }
 }
+//Função retornar mensagem do IMC
 export function displayResultMessage(result){
     let message = ``
     if(result < 18.5){ 
@@ -47,4 +44,8 @@ export function displayResultMessage(result){
         popup.open()
     }
     popup.popUpMessage.innerText = message
+}
+//Função botão fechar no popup
+popup.btnClose.onclick = () => {
+    popup.close()
 }
