@@ -6,7 +6,9 @@
     <title>Calculadora IMC</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="script.js" defer></script>
+
+    <script src="js/script.js" defer type="module"></script>
+    
 </head>
 <body>
     <div class="container">
@@ -22,6 +24,7 @@
                 <label for="inputHeight"><i class="fa-solid fa-ruler"></i> Altura (cm)</label>
                 <input type="text" name="inputHeight" id="inputHeight" autocomplete="off" placeholder="183">
                 <button type="submit">Calcular IMC <i class="fa-solid fa-arrow-right fa-lg"></i></button>
+                <a href="https://pt.wikipedia.org/wiki/Índice_de_massa_corporal" target="_blank"><i class="fa-solid fa-link"></i> Saiba mais</a>
             </form>
         </main>
     </div>
@@ -40,7 +43,7 @@
 
     </div>
 
-    <div class="msgAlert ">           
+    <div class="msgAlert-container">           
             <i class="fa-solid fa-triangle-exclamation"></i> Digite somente números
     </div>
 </body>
