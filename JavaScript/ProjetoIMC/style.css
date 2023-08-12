@@ -92,9 +92,10 @@ form a{
     color: #10222b;
     margin: auto;
     text-decoration: none;
+    transition: color .2s;
 }
 form a:hover{
-    color: #90CAF9;
+    color: #90CAF9;   
 }
 
 /*pagina popup*/
