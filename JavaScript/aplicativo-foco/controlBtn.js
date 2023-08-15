@@ -5,6 +5,7 @@ const timer = document.querySelector('.timer')
 const volume = document.querySelector('.volume')
 const mute = document.querySelector('.mute')
 
+controlButton()
 export function controlButton(){
     play.onclick = () => {
         pause.classList.remove('hide')
@@ -27,5 +28,5 @@ export function controlButton(){
         volume.classList.remove('hide')
     }
 }
-controlButton()
+
 
