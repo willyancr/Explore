@@ -7,6 +7,7 @@ const buttonMute = document.querySelector('.mute')
 const minutes = document.querySelector('.minutes')
 const seconds = document.querySelector('.seconds')
 let receiveMinutes 
+let timeOut
 
 
 controlButton()
@@ -21,13 +22,15 @@ export function controlButton(){
     buttonPause.onclick = () => {
         buttonPause.classList.add('hide')
         buttonPlay.classList.remove('hide')
-        
+        pauseTime()
     }
     buttonStop.onclick = () => {
         buttonStop.classList.add('hide')
         buttonPause.classList.add('hide')
         buttonPlay.classList.remove('hide')
         buttonTimer.classList.remove('hide')
+        minutes.textContent = '00'
+        seconds.textContent = '00'
     }
     buttonVolume.onclick = () =>{
         buttonMute.classList.remove('hide')
@@ -45,7 +48,7 @@ export function controlButton(){
 }
 
 function counterDown(){
-    setTimeout(function(){
+        timeOut = setTimeout(function(){
         let receiveSeconds = Number(seconds.textContent)
         let receiveMinutes = Number(minutes.textContent)
 
@@ -59,7 +62,7 @@ function counterDown(){
         }
         
         if(receiveSeconds <= 0){
-            receiveSeconds = 5
+            receiveSeconds = 60
             
             minutes.textContent = String(receiveMinutes - 1).padStart(2,'0')
         }
@@ -69,4 +72,7 @@ function counterDown(){
 
 }
 
+function pauseTime(){
+    clearTimeout(timeOut)
+}
 
