@@ -1,3 +1,3 @@
-import {controlButton} from './controlBtn.js'
+import {controlButton} from './controlButton.js'
 
 controlButton()
