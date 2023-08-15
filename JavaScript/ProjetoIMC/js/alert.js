@@ -8,5 +8,5 @@ export const popupAlert = {
     close() {
         popupAlert.msgAlertContainer.classList.remove('open')
     }
-
+    
 }
