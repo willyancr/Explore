@@ -31,7 +31,7 @@ button{
     background-color: transparent;
     cursor: pointer;
 }
-box-icon{
+box-icon, i{
     width: 6.4rem;
     height: 6.4rem;   
 }
