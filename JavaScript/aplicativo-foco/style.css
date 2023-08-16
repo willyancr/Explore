@@ -26,6 +26,13 @@ main{
     display: flex;
     margin-bottom: 1.6rem;    
 }
+.minutes{
+    transition: color .3s;
+}
+.minutes:hover{
+    cursor: pointer;
+    color: rgb(202, 230, 255);
+}
 button{
     border: none;
     background-color: transparent;

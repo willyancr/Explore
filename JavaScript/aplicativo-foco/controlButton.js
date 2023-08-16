@@ -12,6 +12,10 @@ const handleVariables = {
      minutes : document.querySelector('.minutes'),
      seconds : document.querySelector('.seconds'),
 }
+function updateTimerDisplay(){
+    handleVariables.minutes.textContent = String(receiveMinutes).padStart(2,'0')
+    handleVariables.seconds.textContent = '00'
+}
 function handlePlay(){
     handleVariables.buttonPause.classList.remove('hide')
     handleVariables.buttonRepeat.classList.remove('hide')
@@ -27,11 +31,11 @@ function handlePause(){
 }
 function handleRepeat(){
     handleVariables.buttonRepeat.classList.remove('hide')
-    handleVariables.buttonPause.classList.add('hide')
     handleVariables.buttonPlay.classList.remove('hide')
+    handleVariables.buttonPause.classList.add('hide')
     handleVariables.buttonTimer.classList.add('hide')
-    handleVariables.minutes.textContent = String(receiveMinutes).padStart(2,'0')
-    handleVariables.seconds.textContent = '00'
+
+    updateTimerDisplay()
     pauseTime()
 }
 function handleVolume(){
@@ -44,14 +48,28 @@ function handleMute(){
 }
 function handleTimer(){
     receiveMinutes = prompt('Quantos minutos')
-    handleVariables.minutes.textContent = String(receiveMinutes).padStart(2,'0')
+    
+    if(receiveMinutes === null){
+        receiveMinutes = '00'
+    }
+    else if(isNaN(receiveMinutes)){
+        alert('Por favor, digite somente números.')
+        return
+    }
+    updateTimerDisplay()
 }
 function handleMinutes(){
     receiveMinutes = prompt('Quantos minutos')
-    handleVariables.minutes.textContent = String(receiveMinutes).padStart(2,'0')
-    handleVariables.seconds.textContent = '00'
+    if(receiveMinutes === null){
+        receiveMinutes = '00'
+    }
+    else if(isNaN(receiveMinutes)){
+        alert('Por favor, digite somente números.')
+        return
+    }
+    updateTimerDisplay()
+    
 }
-
 export function controlButton(){
     handleVariables.buttonPlay.onclick = handlePlay
     handleVariables.buttonPause.onclick = handlePause
@@ -68,21 +86,19 @@ function counterDown(){
         timeOut = setTimeout(function(){
         let receiveSeconds = Number(handleVariables.seconds.textContent)
         let receiveMinutes = Number(handleVariables.minutes.textContent)
-
+                    
         if(receiveMinutes <= 0){
-            handleRepeat()
-            
-            handleVariables.minutes.textContent = String(receiveMinutes).padStart(2,'0')
+            handleRepeat()            
             return
-        }
-        
+        }       
         if(receiveSeconds <= 0){
             receiveSeconds = 60
-            
+           
             handleVariables.minutes.textContent = String(receiveMinutes - 1).padStart(2,'0')
         }
         handleVariables.seconds.textContent = String(receiveSeconds - 1).padStart(2,'0')
         counterDown()
+
     }, 1000)
 
 }
