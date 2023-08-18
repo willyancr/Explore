@@ -1,5 +1,6 @@
 import { handleVariables } from "./main.js"
 import { counterDown, pauseTime, updateTimerDisplay } from "./timer.js"
+import Sound from "./sound.js"
 export {handleMute,handlePause,handlePlay,handleRepeat,handleVolume}
 
 function handlePlay() {

@@ -1,6 +1,7 @@
 import { handleSpanMinutes, handleTimer } from "./timer.js"
 import { handleMute, handlePause, handlePlay, handleRepeat, handleVolume } from "./handleButton.js"
 
+
 export const handleVariables = {
     buttonPlay: document.querySelector('.play'),
     buttonPause: document.querySelector('.pause'),
