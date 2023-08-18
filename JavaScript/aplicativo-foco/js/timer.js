@@ -1,4 +1,5 @@
 import { handleVariables } from "./main.js"
+import Sound from "./sound.js"
 
 let receiveMinutes
 let timeOut
@@ -32,6 +33,7 @@ export function counterDown() {
 
         if (receiveMinutes <= 0) {
             handleRepeat()
+            Sound().alarm()
             return
         }
         if (receiveSeconds <= 0) {
