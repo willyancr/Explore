@@ -1,5 +1,6 @@
 import { handleVariables } from "./main.js"
 import Sound from "./sound.js"
+import { handleRepeat } from "./handleButton.js"
 
 let receiveMinutes
 let timeOut
@@ -30,15 +31,16 @@ export function counterDown() {
     timeOut = setTimeout(function () {
         let receiveSeconds = Number(handleVariables.seconds.textContent)
         let receiveMinutes = Number(handleVariables.minutes.textContent)
-
-        if (receiveMinutes <= 0) {
+        
+        if (receiveMinutes <= 0 && receiveSeconds <= 0) {
             handleRepeat()
             Sound().alarm()
             return
         }
+        
         if (receiveSeconds <= 0) {
             receiveSeconds = 60
-
+            
             handleVariables.minutes.textContent = String(receiveMinutes - 1).padStart(2, '0')
         }
         handleVariables.seconds.textContent = String(receiveSeconds - 1).padStart(2, '0')
