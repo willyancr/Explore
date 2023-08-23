@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA</title>
+    
+</head>
+<body>
+    <nav>
+        <a href="/" onclick="route()">Home</a>
+        <a href="/about" onclick="route()">Sobre</a>
+        <a href="/contact" onclick="route()">Contato</a>
+        <a href="/404" onclick="route()">Error</a>
+    </nav>
+    
+    <div id="app" on></div>
+    
+    
+    <script>
+        //mapeamento da rota
+        const routes = {
+
+            '/': '/JavaScript/SPA/pages/home.html',
+            '/about': '/JavaScript/SPA/pages/about.html',
+            '/contact': '/JavaScript/SPA/pages/contact.html',
+            '/404': '/JavaScript/SPA/pages/404.html'
+
+        }
+        //função evento click
+        function route(event){
+            event = event || window.event
+            event.preventDefault()
+            //vai guardar o endereço do 'a' href
+            window.history.pushState({},'', event.target.href)
+            handle()
+        }
+        //função lidar em pegar o endereço das paginas
+        function handle(){
+            const {pathname} = window.location
+            const route = routes[pathname] || routes['/']
+            
+            fetch(route)
+            .then(data => data.text())
+            .then(html => {
+                document.querySelector('#app').innerHTML = html
+            })
+
+            console.log(route)
+        }
+        handle()
+        //evento de navegar pelo 'voltar' e 'avançar' do browser
+        window.onpopstate = () => {handle()}
+    </script>
+</body>
+</html>
