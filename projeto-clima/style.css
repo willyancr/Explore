@@ -20,7 +20,7 @@ body{
     color: white;
 }
 .container{
-    background-color: rgba(0, 0, 0, 0.699);
+    background-color: rgba(0, 0, 0, 0.801);
     padding: 3rem;
     border-radius: 2rem;
     box-shadow: 10px 10px 20px -12px rgba(0, 0, 0, 0.85);
@@ -50,10 +50,15 @@ button{
 button:hover{
     transform: scale(1.1);
 }
-h2,p{
+h2,img,p{
     margin-bottom: 2rem;
+}
+p{
+    text-transform: capitalize;
 }
 .icon-cloud{
     display: flex;
+    align-items: center;
     gap: 2rem;
 }
+
