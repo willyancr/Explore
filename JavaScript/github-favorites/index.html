@@ -4,8 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub - Favorites</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    
+     <div class="container">
+
+        <header>
+            <h1>Github Favorites</h1>
+            <div class="search">
+                <label for="input-search">Usúario do GitHub</label>
+                <input type="text" placeholder="Usúario do Github">
+                <button>
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+        </header>
+        <table>
+            <thead>
+                <tr>
+                    <th>Usúario</th>
+                    <th>Repositórios</th>
+                    <th>Seguidores</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="https://github.com/willyancr.png" alt="foto perfil">
+                        <a href="https://github.com/willyancr" target="_blank"></a>
+                        <p>Willyan Costa</p>
+                        <span>willyancr</span>
+                    </td>
+                    <td>45</td>
+                    <td>8622</td>
+                    <td><button><i class="fa-solid fa-x fa-2xs"></i></button></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://github.com/willyancr.png" alt="foto perfil">
+                        <a href="https://github.com/willyancr" target="_blank"></a>
+                        <p>Willyan Costa</p>
+                        <span>willyancr</span>
+                    </td>
+                    <td>45</td>
+                    <td>8622</td>
+                    <td><button><i class="fa-solid fa-x fa-2xs"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+     </div>
 </body>
 </html>
