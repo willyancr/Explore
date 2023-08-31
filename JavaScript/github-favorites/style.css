@@ -30,7 +30,7 @@ body{
     white-space: nowrap;
     border-width: 0;
 }
-.container{
+#container{
     max-width: 500px;
     margin: 0 auto;
     padding: 2rem;
