@@ -1,30 +1,65 @@
+//classe api github
+export class apiGitHub{
+    static search(username){
+        const api = `https://api.github.com/users/${username}`
+
+        return fetch(api).then(data => data.json())
+        .then(data => 
+                ({
+                    login: data.login,
+                    name: data.name,
+                    public_repos: data.public_repos,
+                    followers: data.followers
+                })
+            )
+    }
+}
+
 //classe que vai conter a lógica dos dados - como os dados serão estruturados
 export class Favorites{
     constructor(container){
         this.container = document.querySelector(container)
         this.load()
+
     }
     load(){
-        this.users = [ //um array com dois objetos com dados da api
-            {
-               login: 'willyancr', 
-               name: 'Willyan Costa',
-               public_repos: '98',
-               followers: '1500'
-            },
-            {
-               login: 'maykbrito', 
-               name: 'Mayk Brito',
-               public_repos: '150',
-               followers: '3300'
-            }
-        ]
+        this.users = JSON.parse(localStorage.getItem('@github-favorites:')) || []
+        
     }
-    delete(user){
+    save(){
+        localStorage.setItem('@github-favorites:', JSON.stringify(this.users))
+    }
+    async add(username){
+        //tratamento de error se não encontrar o usuario
+        try{
+            const userExists = this.users.find(user => user.login === username)
+
+            if(userExists){
+                throw new Error('Usuário já cadastrado')
+            }
+
+            const user = await apiGitHub.search(username)
+            
+            if(user.login === undefined){
+             throw new Error('Usúario na encontrado!')     
+            }
+            //adicionar os novos usuarios
+            this.users = [user, ...this.users]
+            this.update()
+            this.save()
+
+        }catch(error){
+            alert(error.message)
+        }
+    }
+    //função deletar usuario
+    delete(user){ 
+        //filter para criar um novo array que exclui o usuário com o login especificado
         const filterEntry = this.users.filter(entry => entry.login !== user.login)
 
         this.users = filterEntry
         this.update()
+        this.save()
     }
 }
 
@@ -34,8 +69,15 @@ export class FavoritesViews extends Favorites{
         super(container)
         this.tbody = this.container.querySelector('table tbody') //seleciona o tbody do html
         this.update()
+        this.addUsers()
     }
-
+    addUsers(){
+        const button = this.container.querySelector('.btn-add')
+        button.onclick = () => {
+            const input = this.container.querySelector('input').value
+           this.add(input)
+        }
+    }
     update(){
         this.removeAllTr()
         
