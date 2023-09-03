@@ -1,4 +1,4 @@
-import { apiOMDB } from "./apiOMDB.js"
+import { apiTMDB } from "./apiTMDB.js"
 
 //classe que vai conter a lógica dos dados - como os dados serão estruturados
 export class Favorites{
@@ -6,7 +6,6 @@ export class Favorites{
         this.container = document.querySelector(container)
         this.load()
         
-
     }
     load(){
         this.moviesAndSeries = JSON.parse(localStorage.getItem('@github-favorites:')) || []
@@ -20,16 +19,16 @@ export class Favorites{
                 
         //tratamento de error se não encontrar o usuario
         try{
-            const flixExists = this.moviesAndSeries.find(flix => flix.Search[0].Title === flixname)
+            const flixExists = this.moviesAndSeries.find(flix => flix.results[0].title === flixname)
 
             if(flixExists){
                 throw new Error('Filme/Série já cadastrado')
             }
 
-            const flix = await apiOMDB.search(flixname)
-            console.log(flix)
+            const flix = await apiTMDB.search(flixname)
             
-            if(flix.Search[0].Title == undefined){
+            
+            if(flix.results[0].title == undefined){
              throw new Error('Filme/Série não encontrado!')
                   
             }
@@ -41,11 +40,12 @@ export class Favorites{
         }catch(error){
             alert(error.message)
         }
+        document.querySelector('input').value = ''
     }
     //função deletar usuario
     delete(flix){ 
         //filter para criar um novo array que exclui o usuário com o Title especificado
-        const filterEntry = this.moviesAndSeries.filter(entry => entry.Search[0].Title !== flix.Search[0].Title)
+        const filterEntry = this.moviesAndSeries.filter(entry => entry.results[0].title !== flix.results[0].title)
 
         this.moviesAndSeries = filterEntry
         this.update()
@@ -60,24 +60,27 @@ export class FavoritesViews extends Favorites{
         this.tbody = this.container.querySelector('table tbody') //seleciona o tbody do html
         this.update()
         this.addFlix() 
+        
     }
     addFlix(){
-        const button = this.container.querySelector('.btn-add')
+        const button = this.container.querySelector('.btn-add')              
         button.onclick = () => {
             const input = this.container.querySelector('input').value
-           this.add(input)
+            this.add(input)
         }
+        
     }
+    
     update(){
         this.removeAllTr()
         
         this.moviesAndSeries.forEach((flix)=>{ //
             const row = this.createTr()
-            row.querySelector('.td-user img').src = flix.Search[0].Poster            
-            row.querySelector('.td-user p').innerHTML = flix.Search[0].Title
-            row.querySelector('.type').innerHTML = flix.Search[0].Type
-            row.querySelector('.year').innerHTML = flix.Search[0].Year
-            //row.querySelector('.ratings').innerHTML = flix.Search[0].Language
+            row.querySelector('.td-user img').src = `https://image.tmdb.org/t/p/w500${flix.results[0].poster_path}`            
+            row.querySelector('.td-user p').innerHTML = flix.results[0].title
+            row.querySelector('.year').innerHTML = flix.results[0].release_date
+            row.querySelector('.vote').innerHTML = flix.results[0].vote_average.toFixed(1)
+            
 
             row.querySelector('.btn-remove').onclick = () => {
                 const ifOK = confirm ('Tem certeza que deseja remover?')
@@ -99,8 +102,9 @@ export class FavoritesViews extends Favorites{
                 <p>Willyan Costa</p>
                 
             </td>
-            <td class="type">45</td>
+            <td class="vote">45</td>
             <td class="year">8622</td>
+            
             
             <td><button class="btn-remove"><i class="fa-solid fa-x fa-xs"></i></button></td>
         `
