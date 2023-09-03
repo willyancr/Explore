@@ -40,6 +40,7 @@ export class Favorites{
         }catch(error){
             alert(error.message)
         }
+        document.querySelector('input').value = ''
     }
     //função deletar usuario
     delete(flix){ 
@@ -59,14 +60,17 @@ export class FavoritesViews extends Favorites{
         this.tbody = this.container.querySelector('table tbody') //seleciona o tbody do html
         this.update()
         this.addFlix() 
+        
     }
     addFlix(){
-        const button = this.container.querySelector('.btn-add')
+        const button = this.container.querySelector('.btn-add')              
         button.onclick = () => {
             const input = this.container.querySelector('input').value
-           this.add(input)
+            this.add(input)
         }
+        
     }
+    
     update(){
         this.removeAllTr()
         
