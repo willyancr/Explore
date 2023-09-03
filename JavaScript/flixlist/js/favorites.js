@@ -77,7 +77,7 @@ export class FavoritesViews extends Favorites{
             row.querySelector('.td-user p').innerHTML = flix.Search[0].Title
             row.querySelector('.type').innerHTML = flix.Search[0].Type
             row.querySelector('.year').innerHTML = flix.Search[0].Year
-            row.querySelector('.ratings').innerHTML = flix.Search[0].Language
+            //row.querySelector('.ratings').innerHTML = flix.Search[0].Language
 
             row.querySelector('.btn-remove').onclick = () => {
                 const ifOK = confirm ('Tem certeza que deseja remover?')
@@ -101,7 +101,7 @@ export class FavoritesViews extends Favorites{
             </td>
             <td class="type">45</td>
             <td class="year">8622</td>
-            <td class="ratings">8622</td>
+            
             <td><button class="btn-remove"><i class="fa-solid fa-x fa-xs"></i></button></td>
         `
         return tr // vai retornar pq vai usar a estrutura pra cada elementos que tiver meus dados  
