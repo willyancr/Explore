@@ -1,35 +1,40 @@
-import { apiGitHub } from "./apiGitHub.js"
+import { apiOMDB } from "./apiOMDB.js"
 
 //classe que vai conter a lógica dos dados - como os dados serão estruturados
 export class Favorites{
     constructor(container){
         this.container = document.querySelector(container)
         this.load()
+        
 
     }
     load(){
-        this.users = JSON.parse(localStorage.getItem('@github-favorites:')) || []
+        this.moviesAndSeries = JSON.parse(localStorage.getItem('@github-favorites:')) || []
         
     }
     save(){
-        localStorage.setItem('@github-favorites:', JSON.stringify(this.users))
+        localStorage.setItem('@github-favorites:', JSON.stringify(this.moviesAndSeries))
     }
-    async add(username){
+
+    async add(flixname){
+                
         //tratamento de error se não encontrar o usuario
         try{
-            const userExists = this.users.find(user => user.login === username)
+            const flixExists = this.moviesAndSeries.find(flix => flix.Search[0].Title === flixname)
 
-            if(userExists){
-                throw new Error('Usuário já cadastrado')
+            if(flixExists){
+                throw new Error('Filme/Série já cadastrado')
             }
 
-            const user = await apiGitHub.search(username)
+            const flix = await apiOMDB.search(flixname)
+            console.log(flix)
             
-            if(user.login === undefined){
-             throw new Error('Usúario na encontrado!')     
+            if(flix.Search[0].Title == undefined){
+             throw new Error('Filme/Série não encontrado!')
+                  
             }
             //adicionar os novos usuarios
-            this.users = [user, ...this.users]
+            this.moviesAndSeries = [flix, ...this.moviesAndSeries]
             this.update()
             this.save()
 
@@ -38,11 +43,11 @@ export class Favorites{
         }
     }
     //função deletar usuario
-    delete(user){ 
-        //filter para criar um novo array que exclui o usuário com o login especificado
-        const filterEntry = this.users.filter(entry => entry.login !== user.login)
+    delete(flix){ 
+        //filter para criar um novo array que exclui o usuário com o Title especificado
+        const filterEntry = this.moviesAndSeries.filter(entry => entry.Search[0].Title !== flix.Search[0].Title)
 
-        this.users = filterEntry
+        this.moviesAndSeries = filterEntry
         this.update()
         this.save()
     }
@@ -54,9 +59,9 @@ export class FavoritesViews extends Favorites{
         super(container)
         this.tbody = this.container.querySelector('table tbody') //seleciona o tbody do html
         this.update()
-        this.addUsers()
+        this.addFlix() 
     }
-    addUsers(){
+    addFlix(){
         const button = this.container.querySelector('.btn-add')
         button.onclick = () => {
             const input = this.container.querySelector('input').value
@@ -66,19 +71,18 @@ export class FavoritesViews extends Favorites{
     update(){
         this.removeAllTr()
         
-        this.users.forEach((user)=>{ //
+        this.moviesAndSeries.forEach((flix)=>{ //
             const row = this.createTr()
-            row.querySelector('.td-user img').src = `https://github.com/${user.login}.png`
-            row.querySelector('.td-user a').href = `https://github.com/${user.login}`
-            row.querySelector('.td-user p').innerHTML = user.name
-            row.querySelector('.td-user span').innerHTML = user.login
-            row.querySelector('.resp').innerHTML = user.public_repos
-            row.querySelector('.followers').innerHTML = user.followers
+            row.querySelector('.td-user img').src = flix.Search[0].Poster            
+            row.querySelector('.td-user p').innerHTML = flix.Search[0].Title
+            row.querySelector('.type').innerHTML = flix.Search[0].Type
+            row.querySelector('.year').innerHTML = flix.Search[0].Year
+            row.querySelector('.ratings').innerHTML = flix.Search[0].Language
 
             row.querySelector('.btn-remove').onclick = () => {
                 const ifOK = confirm ('Tem certeza que deseja remover?')
                 if(ifOK){
-                    this.delete(user)
+                    this.delete(flix)
                 }
             }
 
@@ -90,13 +94,14 @@ export class FavoritesViews extends Favorites{
         const tr = document.createElement('tr')
         tr.innerHTML = `
             <td class="td-user">
-                <img src="https://github.com/willyancr.png" alt="foto perfil">
-                <a href="https://github.com/willyancr" target="_blank">
+                <img src="" alt="foto perfil">
+                
                 <p>Willyan Costa</p>
-                <span>willyancr</span>
+                
             </td>
-            <td class="resp">45</td>
-            <td class="followers">8622</td>
+            <td class="type">45</td>
+            <td class="year">8622</td>
+            <td class="ratings">8622</td>
             <td><button class="btn-remove"><i class="fa-solid fa-x fa-xs"></i></button></td>
         `
         return tr // vai retornar pq vai usar a estrutura pra cada elementos que tiver meus dados  

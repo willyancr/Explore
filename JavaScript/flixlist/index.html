@@ -5,19 +5,20 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub - Favorites</title>
+    <title>FlixList - Favoritos</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="js/main.js" type="module" defer></script>
+    <link rel="shortcut icon" href="image/favicon.png" type="image/x-icon">
 </head>
 <body>
      <div id="container">
 
         <header>
-            <h1><i class="fa-brands fa-github"></i> Github Favoritos</h1>
+            <img src="image/logo1.png" alt="">
             <div class="search">
-                <label class="sr-only" for="input-search">Usúario do GitHub</label>
-                <input type="text" placeholder="Usúario do Github">
+                <label class="sr-only" for="input-search">Nome do filme/série</label>
+                <input type="text" placeholder="Nome do filme/série">
                 <button class="btn-add">
                     <i class="fa-solid fa-plus"></i>
                 </button>
@@ -26,14 +27,15 @@
         <table>
             <thead>
                 <tr>
-                    <th>Usúario</th>
-                    <th>Repositórios</th>
-                    <th>Seguidores</th>
+                    <th>Nome</th>
+                    <th>Tipo</th>
+                    <th>Ano</th>
+                    <th>Nota</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <!-- <tr>
                     <td class="td-user">
                         <img src="https://github.com/willyancr.png" alt="foto perfil">
                         <a href="https://github.com/willyancr" target="_blank">
@@ -44,7 +46,7 @@
                     <td class="followers">7838</td>
                     <td><button class="btn-remove"><i class="fa-solid fa-x fa-xs"></i></button>
                     </td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
      </div>

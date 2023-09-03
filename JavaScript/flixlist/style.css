@@ -9,7 +9,7 @@
     font-size: 62.5%;
     --color-text: #423E3B;
     --bg-pri: #F0F7EE;
-    --bg-sec: #6d348f;
+    --bg-sec: #cf4343;
 }
 body{
     font-size: 1.6rem;
@@ -31,7 +31,7 @@ body{
     border-width: 0;
 }
 #container{
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -41,10 +41,8 @@ header{
     justify-content: space-between;
     margin: 3rem 0;
 }
-header h1{
-    font-size: 2rem;
-    font-weight: 600;
-    text-transform: uppercase;
+header img{
+    width: 17rem;
 }
 .search{
     display: flex;
@@ -106,7 +104,7 @@ table tr:nth-child(even){
 table img{
     width: 5rem;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: .5rem;
 }
 .td-user{
     display: flex;
