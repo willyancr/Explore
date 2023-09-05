@@ -128,6 +128,11 @@ table img{
 
 @media (max-width: 501px) {
     
+    #container{
+        max-width: 450px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
     header{
         display: flex;
         align-items: center;
