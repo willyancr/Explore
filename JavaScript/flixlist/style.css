@@ -126,3 +126,27 @@ table img{
     cursor: pointer;
 }
 
+@media (max-width: 501px) {
+    
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 3rem 0;
+        flex-direction: column;
+        
+    }
+    header img{
+        width: 30rem;
+        margin-bottom: 3rem;
+    }
+    .search input{
+        width: 25rem;
+        height: 4rem;    
+    }
+    .search button{
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
